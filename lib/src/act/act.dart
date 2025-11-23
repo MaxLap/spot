@@ -858,7 +858,7 @@ _PokablePositions _findPokablePositions(
   const gridSize = 8;
   for (int x = 0; x < renderBox.size.width; x += gridSize) {
     for (int y = 0; y < renderBox.size.height; y += gridSize) {
-      final Offset localPosition = Offset(x.toDouble(), y.toDouble());
+      final Offset localPosition = Offset(x.toDouble()+0.01, y.toDouble()+0.01);
       final Offset globalPosition = renderBox.localToGlobal(localPosition);
       final shouldPoke =
           shouldBePoked?.call(localPosition, globalPosition) ?? true;
